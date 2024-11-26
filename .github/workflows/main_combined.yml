@@ -41,32 +41,32 @@ jobs:
             release.zip
             !venv/
 
-  deploy_facekeyrg:
-    runs-on: ubuntu-latest
-    needs: build
-    permissions:
-      id-token: write
-      contents: read
+ deploy_facekeyrg:
+ runs-on: ubuntu-latest
+ needs: build
+ permissions:
+   id-token: write  # Permiso para usar credenciales federadas
+   contents: read
 
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v4
-        with:
-          name: python-app
+ steps:
+   - name: Download artifact from build job
+     uses: actions/download-artifact@v4
+     with:
+       name: python-app
 
-      - name: Unzip artifact for deployment
-        run: unzip release.zip
+   - name: Unzip artifact for deployment
+     run: unzip release.zip
 
-      - name: Login to Azure using Federated Credential
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
-          allow-no-subscriptions: true
+   - name: Login to Azure using Federated Credential
+     uses: azure/login@v2
+     with:
+       client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID }}
+       tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID }}
+       subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
 
-      - name: Deploy to Azure Web App - FaceKeyRG
-        uses: azure/webapps-deploy@v3
-        with:
-          app-name: 'FaceKeyRG'
-          slot-name: 'Production'
+   - name: Deploy to Azure Web App - FaceKeyRG
+     uses: azure/webapps-deploy@v3
+     with:
+       app-name: 'FaceKeyRG'
+       slot-name: 'Production'
+
