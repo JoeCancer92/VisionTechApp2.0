@@ -62,8 +62,7 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_387186795F3C4187B030EA0989A018D9 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4F69BAA69A574AB19F1850F72D400CDC }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CE87DE8B914B40C380E2A56D2C489684 }}
-          allow-no-subscription-id: true
-          federated-token: true
+          enable-debug-logging: true
 
       - name: Deploy to Azure Web App - FaceKeyRG
         uses: azure/webapps-deploy@v3
@@ -92,8 +91,7 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_387186795F3C4187B030EA0989A018D9 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4F69BAA69A574AB19F1850F72D400CDC }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CE87DE8B914B40C380E2A56D2C489684 }}
-          allow-no-subscription-id: true
-          federated-token: true
+          enable-debug-logging: true
 
       - name: Deploy to Azure Web App - FacialRec
         uses: azure/webapps-deploy@v3
@@ -122,8 +120,7 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_387186795F3C4187B030EA0989A018D9 }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4F69BAA69A574AB19F1850F72D400CDC }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CE87DE8B914B40C380E2A56D2C489684 }}
-          allow-no-subscription-id: true
-          federated-token: true
+          enable-debug-logging: true
 
       - name: Deploy to Azure Web App - VisionTechApp
         uses: azure/webapps-deploy@v3
