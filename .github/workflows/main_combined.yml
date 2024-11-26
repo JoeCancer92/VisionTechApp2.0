@@ -59,7 +59,7 @@ jobs:
       - name: Login to Azure using Managed Identity
         uses: azure/login@v2
         with:
-          managed-identity: true
+          managed-identity-client-id: c2497043-8ad5-4a94-adae-0df2ffa4e128
 
       - name: Deploy to Azure Web App - FaceKeyRG
         uses: azure/webapps-deploy@v3
@@ -85,7 +85,7 @@ jobs:
       - name: Login to Azure using Managed Identity
         uses: azure/login@v2
         with:
-          managed-identity: true
+          managed-identity-client-id: c2497043-8ad5-4a94-adae-0df2ffa4e128
 
       - name: Deploy to Azure Web App - FacialRec
         uses: azure/webapps-deploy@v3
@@ -111,7 +111,7 @@ jobs:
       - name: Login to Azure using Managed Identity
         uses: azure/login@v2
         with:
-          managed-identity: true
+          managed-identity-client-id: c2497043-8ad5-4a94-adae-0df2ffa4e128
 
       - name: Deploy to Azure Web App - VisionTechApp
         uses: azure/webapps-deploy@v3
