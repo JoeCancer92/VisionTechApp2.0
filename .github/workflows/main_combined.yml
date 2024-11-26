@@ -33,11 +33,9 @@ jobs:
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
 
-      - name: Login to Azure using Federated Credential
-        uses: azure/login@v2
-        with:
-          managed-identity: true
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
+      - name: Login to Azure using Managed Identity
+        run: |
+          az login --identity
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
