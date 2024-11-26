@@ -44,6 +44,10 @@ jobs:
   deploy_facekeyrg:
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      id-token: write
+      contents: read
+
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
@@ -59,7 +63,7 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
-          enable-debug-logging: true
+          allow-no-subscriptions: true
 
       - name: Deploy to Azure Web App - FaceKeyRG
         uses: azure/webapps-deploy@v3
