@@ -1,4 +1,4 @@
-name: Build and deploy Python app to Azure Web App - Visiontechapp
+name: Build and deploy Python app to Azure Web App - FacialRecApp
 
 on:
   push:
@@ -36,6 +36,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'Visiontechapp'
-          slot-name: 'Production'
+          app-name: 'FacialRecApp'  # Actualiza con el nombre correcto
+          slot-name: ''  # Puedes dejarlo vacío si no tienes slots específicos
           package: release.zip
