@@ -59,9 +59,11 @@ jobs:
       - name: Login to Azure using Federated Credential
         uses: azure/login@v2
         with:
-          client-id: c2497043-8ad5-4a94-adae-0df2ffa4e128
-          tenant-id: <YOUR_TENANT_ID>
-          subscription-id: <YOUR_SUBSCRIPTION_ID>
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_387186795F3C4187B030EA0989A018D9 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4F69BAA69A574AB19F1850F72D400CDC }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CE87DE8B914B40C380E2A56D2C489684 }}
+          allow-no-subscription-id: true
+          federated-token: true
 
       - name: Deploy to Azure Web App - FaceKeyRG
         uses: azure/webapps-deploy@v3
@@ -87,9 +89,11 @@ jobs:
       - name: Login to Azure using Federated Credential
         uses: azure/login@v2
         with:
-          client-id: c2497043-8ad5-4a94-adae-0df2ffa4e128
-          tenant-id: <YOUR_TENANT_ID>
-          subscription-id: <YOUR_SUBSCRIPTION_ID>
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_387186795F3C4187B030EA0989A018D9 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4F69BAA69A574AB19F1850F72D400CDC }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CE87DE8B914B40C380E2A56D2C489684 }}
+          allow-no-subscription-id: true
+          federated-token: true
 
       - name: Deploy to Azure Web App - FacialRec
         uses: azure/webapps-deploy@v3
@@ -115,9 +119,11 @@ jobs:
       - name: Login to Azure using Federated Credential
         uses: azure/login@v2
         with:
-          client-id: c2497043-8ad5-4a94-adae-0df2ffa4e128
-          tenant-id: <YOUR_TENANT_ID>
-          subscription-id: <YOUR_SUBSCRIPTION_ID>
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_387186795F3C4187B030EA0989A018D9 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_4F69BAA69A574AB19F1850F72D400CDC }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_CE87DE8B914B40C380E2A56D2C489684 }}
+          allow-no-subscription-id: true
+          federated-token: true
 
       - name: Deploy to Azure Web App - VisionTechApp
         uses: azure/webapps-deploy@v3
