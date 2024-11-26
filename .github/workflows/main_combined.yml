@@ -37,6 +37,7 @@ jobs:
         uses: azure/login@v2
         with:
           managed-identity: true
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
