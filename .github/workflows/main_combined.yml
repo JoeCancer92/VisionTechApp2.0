@@ -36,10 +36,7 @@ jobs:
       - name: Login to Azure using Federated Credential
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID }}
-          allow-no-subscriptions: true
+          managed-identity: true
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
